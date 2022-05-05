@@ -72,8 +72,7 @@ def main(path):
     ### Elastic augmentation
     # aug_training_data = []
     # for i in range(0, TRAIN_SZ):
-    #     #aug_im = elastic_transform.elastic_transform(np.reshape(training_data[i], (32, 32, 3)), alpha=16, sigma=6, row=32, col=32)
-    #     aug_im = elastic_transform.elastic_transform(np.reshape(training_data[i], (imRowL, imColL)), alpha=9, sigma=3)
+    #     aug_im = elastic_transform(np.reshape(training_data[i], (imRowL, imColL)), alpha=9, sigma=3)
     #     aug_training_data.append(np.reshape(aug_im, (INPUT_SZ)))
     #
     # aug_training_data = np.array(aug_training_data, dtype=ctypes.c_uint8)
