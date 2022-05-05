@@ -288,20 +288,20 @@ def trans_img(img, tx=0, ty=0):
     translated_image = cv2.warpAffine(src=img, M=translation_matrix, dsize=(width, height))
     return translated_image
 
-### ORIGINAL
-def load_uint8_mat_from_file(file_name, rows, cols, path="/Users/jf330/Desktop/Manchester/spinnaker_proj/C_helpers_new/", offset=0):
+### Data loading functions
+def load_uint8_mat_from_file(file_name, rows, cols, path="./", offset=0):
     return np.reshape(np.fromfile(path + file_name, dtype=ctypes.c_uint8)[offset:], (rows, cols))
 
 
-def load_uint8_vec_from_file(file_name, size, path="/Users/jf330/Desktop/Manchester/spinnaker_proj/C_helpers_new/", offset=0):
+def load_uint8_vec_from_file(file_name, size, path="./", offset=0):
     return np.fromfile(path + file_name, dtype=ctypes.c_uint8)[offset:]
 
 
-def load_int32_mat_from_file(file_name, rows, cols, path="/Users/jf330/Desktop/Manchester/spinnaker_proj/C_helpers_new/"):
+def load_int32_mat_from_file(file_name, rows, cols, path="./"):
     return np.reshape(np.fromfile(path + file_name, dtype=ctypes.c_int32), (rows, cols))
 
 
-def load_int32_vec_from_file(file_name, size, path="/Users/jf330/Desktop/Manchester/spinnaker_proj/C_helpers_new/"):
+def load_int32_vec_from_file(file_name, size, path="./"):
     return np.fromfile(path + file_name, dtype=ctypes.c_int32)
 
 
@@ -313,7 +313,7 @@ if __name__ == '__main__':
 
     parser.add_argument(
         '--path',
-        default='/Users/jf330/Downloads/BB_CapoCaccia/BB_clean/',
+        default="./",
         type=text_type,
         help='Default directory path',
     )
